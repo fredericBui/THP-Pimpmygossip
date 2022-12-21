@@ -1,13 +1,11 @@
-<h1>Register</h1>
-
-<%= form_with url: "/register", method: :post do |form| %>
-  <%= form.label :pseudo, "Pseudo" %>
-  <%= form.text_field :pseudo %>
-  <%= form.label :email, "Email" %>
-  <%= form.text_field :email %>
-  <%= form.label :password, "Password" %>
-  <%= form.password_field :password %>
-  <%= form.label :password_confirmation, "Confirm password" %>
-  <%= form.password_field :password_confirmation %>
-  <%= form.submit "Register" %>
+<h1 id="register-title" class="mt-5">Welcome to Gossip</h1>
+<%= form_with url: "/register", class: "registration-form", method: :post do |form| %>
+  <%= form.text_field :pseudo, class: "form-control", placeholder: "Enter a pseudo" %>
+  <%= form.text_field :email, class: "form-control", placeholder: "Enter an email" %>
+  <%= form.password_field :password, class: "form-control", placeholder: "Enter a password" %>
+  <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm the password" %>
+  <div id="register-btn-container">
+    <%= form.submit "Register", class: "btn btn-primary", id: "register-btn" %>
+  </div>
 <% end %>
+<p class="text-center">Already have an account ? <a href="/login">Login</a></p>

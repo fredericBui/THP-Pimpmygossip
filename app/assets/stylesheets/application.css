@@ -32,3 +32,29 @@ nav {
   display: flex;
   justify-content: flex-end;
 }
+
+#register-title {
+  text-align: center;
+}
+
+.registration-form {
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-form > input {
+  margin: 20px 0px;
+}
+
+#register-btn {
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+#register-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
