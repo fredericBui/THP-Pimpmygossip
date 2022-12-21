@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_21_135043) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_21_135825) do
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "gossips", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_gossips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -26,5 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_135043) do
     t.index ["city_id"], name: "index_users_on_city_id"
   end
 
+  add_foreign_key "gossips", "users"
   add_foreign_key "users", "cities"
 end
