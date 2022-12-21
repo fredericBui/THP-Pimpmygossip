@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Navbar container */
+nav {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  box-shadow: 0px 0px 15px black;
+  padding: 10px 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: flex-end;
+}
