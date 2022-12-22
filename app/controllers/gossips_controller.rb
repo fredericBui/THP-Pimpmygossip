@@ -6,10 +6,6 @@ class GossipsController < ApplicationController
         @gossips = Gossip.all
     end
 
-    def test
-        redirect_to gossip_new_path
-    end
-
     def new
 
     end
