@@ -1,6 +1,7 @@
 <article class="card mx-4 my-3 p-3"> 
     <b>Id : <%= @gossip.id %></b>
     <p><%= @gossip.content %></p>
+    <a href="edit/<%= @gossip.id%>" class= "btn btn-primary w-25">Edit</a>
     <%= form_with url: "/gossip/#{@gossip.id}", method: :delete do |form| %>
         <div>
             <%= form.submit "Delete", class: "btn btn-danger" %>

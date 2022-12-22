@@ -1,0 +1,7 @@
+<%= form_with url: "/gossip/edit/#{@gossip.id}" , class: "m-5", method: :put do |form| %>
+  <%= form.text_field :content, class: "form-control p-3", value: @gossip.content %>
+  <div id="register-btn-container">
+    <%= form.submit "Edit", class: "btn btn-success w-25 my-4" %>
+  </div>
+<% end %>
+<a href="/gossips" class= "btn btn-primary w-25">Going back to gossips</a>

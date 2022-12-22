@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get :gossip_new, to: "gossips#new"
   post :gossip_new, to: "gossips#create"
   get "gossip/:id", to: "gossips#view"
+  get "gossip/edit/:id", to: "gossips#edit"
+  put "gossip/edit/:id", to: "gossips#update"
   delete "gossip/:id", to: "gossips#delete"
   get :logout, to: "logout#index"
 

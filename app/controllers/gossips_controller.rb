@@ -22,6 +22,15 @@ class GossipsController < ApplicationController
         @gossip = Gossip.find(params[:id])
     end
 
+    def edit
+        @gossip = Gossip.find(params[:id])
+    end
+
+    def update
+        Gossip.find(params[:id]).update(content: params[:content])
+        redirect_to gossips_path
+    end
+
     def delete
         puts params[:id]
         Gossip.find(params[:id]).destroy
