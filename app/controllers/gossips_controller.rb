@@ -17,4 +17,8 @@ class GossipsController < ApplicationController
             redirect_to gossips_path
         end
     end
+
+    def view
+        @gossip = Gossip.find(params[:id])
+    end
 end

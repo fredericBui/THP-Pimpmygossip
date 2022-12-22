@@ -2,7 +2,10 @@
 
 <section>
     <% @gossips.each do |gossip| %> 
-        <article class="card mx-4 my-3 p-3"> <%= gossip.content %> </article>
+        <article class="card mx-4 my-3 p-3"> 
+            <%= gossip.content %>
+            <a href="gossip/<%= gossip.id%>">View</a>
+        </article>
         <% gossip.comments.each do |comment| %> 
             <article class="card ms-5 me-4 my-3 p-3"> <%= comment.content %></article>
         <% end %> 
