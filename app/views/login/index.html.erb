@@ -7,3 +7,8 @@
   </div>
 <% end %>
 <p class="text-center">Not register yet ? <a href="/register">Sign up</a></p>
+<% flash.each do |type, msg| %>
+  <div class ="text-center">
+    <%= msg %>
+  </div>
+<% end %>
