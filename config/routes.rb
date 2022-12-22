@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get :register_success , to: "register#success"
   get :login, to: "login#index"
   post :login, to: "login#connect"
+  get :gossips, to: "gossips#index"
+  get :logout, to: "logout#index"
 
   # Defines the root path route ("/")
   # root "articles#index"
