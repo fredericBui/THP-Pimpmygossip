@@ -33,12 +33,8 @@ nav {
   justify-content: flex-end;
 }
 
-#register-title {
-  text-align: center;
-}
-
 .registration-form {
-  width: 50%;
+  width: 30%;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -46,11 +42,6 @@ nav {
 
 .registration-form > input {
   margin: 20px 0px;
-}
-
-#register-btn {
-  width: 50%;
-  margin-bottom: 15px;
 }
 
 #register-btn-container {
