@@ -1,6 +1,8 @@
 class LoginController < ApplicationController
     def index
-
+        if session[:user_id]
+            redirect_to gossips_path
+        end
     end
 
     def connect
