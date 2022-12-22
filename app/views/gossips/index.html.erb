@@ -3,7 +3,9 @@
 <section>
     <% @gossips.each do |gossip| %> 
         <article class="card mx-4 my-3 p-3"> 
-            <%= gossip.content %>
+            <b><%= gossip.user.pseudo %></b>
+            <p><%= gossip.content %></p>
+            <p>Created : <%= gossip.created_at %></p>
             <a href="gossip/<%= gossip.id%>">View</a>
         </article>
         <% gossip.comments.each do |comment| %> 

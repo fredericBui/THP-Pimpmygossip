@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get :gossip_new, to: "gossips#new"
   post :gossip_new, to: "gossips#create"
   get "gossip/:id", to: "gossips#view"
+  delete "gossip/:id", to: "gossips#delete"
   get :logout, to: "logout#index"
 
   # Defines the root path route ("/")

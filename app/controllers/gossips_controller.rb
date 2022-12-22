@@ -21,4 +21,10 @@ class GossipsController < ApplicationController
     def view
         @gossip = Gossip.find(params[:id])
     end
+
+    def delete
+        puts params[:id]
+        Gossip.find(params[:id]).destroy
+        redirect_to gossips_path
+    end
 end

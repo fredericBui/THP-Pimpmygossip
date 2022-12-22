@@ -1,5 +1,12 @@
 <article class="card mx-4 my-3 p-3"> 
-    <%= @gossip.content %>
+    <b>Id : <%= @gossip.id %></b>
+    <p><%= @gossip.content %></p>
+    <%= form_with url: "/gossip/#{@gossip.id}", method: :delete do |form| %>
+        <div>
+            <%= form.submit "Delete", class: "btn btn-danger" %>
+        </div>
+    <% end %>
+    <a href="/gossips" class= "btn btn-primary w-25">Going back to gossips</a>
 </article>
 <% @gossip.comments.each do |comment| %> 
     <article class="card ms-5 me-4 my-3 p-3"> <%= comment.content %></article>
