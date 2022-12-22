@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get :login, to: "login#index"
   post :login, to: "login#connect"
   get :gossips, to: "gossips#index"
+  get :gossip_new, to: "gossips#new"
+  post :gossip_new, to: "gossips#create"
   get :logout, to: "logout#index"
 
   # Defines the root path route ("/")

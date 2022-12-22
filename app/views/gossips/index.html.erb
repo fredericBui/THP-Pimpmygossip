@@ -1,1 +1,10 @@
-<h1>All gossips</h1>
+<a href=<%= :gossip_new %> class="btn btn-primary" > Create a new gossip</a>
+
+<section>
+    <% @gossips.each do |gossip| %> 
+        <article class="card mx-4 p-3"> <%= gossip.content %> </article>
+        <% gossip.comments.each do |comment| %> 
+            <article class="card ms-5 me-4 my-3 p-3"> <%= comment.content %></article>
+        <% end %> 
+    <% end %> 
+</section>
