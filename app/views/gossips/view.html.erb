@@ -12,5 +12,8 @@
     <a href="/gossips" class= "btn btn-primary w-25">Going back to gossips</a>
 </article>
 <% @gossip.comments.each do |comment| %> 
-    <article class="card ms-5 me-4 my-3 p-3"> <%= comment.content %></article>
+    <article class="card ms-5 me-4 my-3 p-3">
+        <b><%= comment.user.pseudo %></b>
+        <p><%= comment.content %></p>
+    </article>
 <% end %> 
