@@ -2,6 +2,7 @@
 <%= form_with url: "/register", class: "registration-form", method: :post do |form| %>
   <%= form.text_field :pseudo, class: "form-control", placeholder: "Enter a pseudo" %>
   <%= form.text_field :email, class: "form-control", placeholder: "Enter an email" %>
+  <%= form.text_field :city, class: "form-control", placeholder: "Enter your city" %>
   <%= form.password_field :password, class: "form-control", placeholder: "Enter a password" %>
   <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm the password" %>
   <div id="register-btn-container">
