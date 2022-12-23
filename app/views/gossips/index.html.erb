@@ -1,15 +1,21 @@
-<a href=<%= :gossip_new %> class="btn btn-primary" > Create a new gossip</a>
+<a href=<%= :gossip_new %> class="btn btn-primary text-right" > Create a new gossip</a>
 
 <section>
     <% @gossips.each do |gossip| %> 
         <article class="card mx-4 my-3 p-3"> 
             <b><%= gossip.user.pseudo %></b>
             <p><%= gossip.content %></p>
-            <p>Created : <%= gossip.created_at %></p>
+            <p><%= gossip.created_at %></p>
             <a href="gossip/<%= gossip.id%>">View</a>
+            <a href="gossip/<%= gossip.id%>/comment/new">Comment</a>
         </article>
         <% gossip.comments.each do |comment| %> 
-            <article class="card ms-5 me-4 my-3 p-3"> <%= comment.content %></article>
+            <article class="card ms-5 me-4 my-3 p-3">
+                <b><%= comment.user.pseudo %></b>
+                <p><%= comment.content %></p>
+                <p><%= comment.created_at %></p>
+                <a href="gossip/comment/<%= comment.id%>">View</a>
+            </article>
         <% end %> 
     <% end %> 
 </section>
