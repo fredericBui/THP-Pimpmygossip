@@ -5,14 +5,12 @@ Rails.application.routes.draw do
   get :register_success , to: "register#success"
   get :login, to: "login#index"
   post :login, to: "login#connect"
-  get :gossips, to: "gossips#index"
-  get :gossip_new, to: "gossips#new"
-  post :gossip_new, to: "gossips#create"
-  get "gossip/:id", to: "gossips#view"
-  get "gossip/edit/:id", to: "gossips#edit"
-  put "gossip/edit/:id", to: "gossips#update"
+  #improve gossip with resources
+  resources :gossips do
+    resources :comments
+  end
+
   get "gossip/like/:id", to: "like#like_dislike"
-  delete "gossip/:id", to: "gossips#delete"
   get "gossip/:id/comment/new", to: "comment#new"
   post "gossip/:id/comment/new", to: "comment#create"
   get "gossip/comment/like/:id", to: "like#like_dislike_comment"
@@ -23,5 +21,5 @@ Rails.application.routes.draw do
   get :logout, to: "logout#index"
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "gossips#index"
 end

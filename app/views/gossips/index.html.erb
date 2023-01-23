@@ -1,5 +1,4 @@
-<a href=<%= :gossip_new %> class="btn btn-primary text-right" > Create a new gossip</a>
-
+<%= link_to "Create a new gossip", new_gossip_path, class: "btn btn-primary text-right"%>
 <section>
     <% @gossips.each do |gossip| %> 
         <article class="card mx-4 my-3 p-3"> 
@@ -12,7 +11,7 @@
             <b><%= gossip.user.pseudo %></b>
             <p><%= gossip.content %></p>
             <p><%= gossip.created_at %></p>
-            <a href="gossip/<%= gossip.id%>">View</a>
+            <%= link_to "View", gossip_path(gossip) %>
             <a href="gossip/<%= gossip.id%>/comment/new">Comment</a>
         </article>
         <% gossip.comments.each do |comment| %> 

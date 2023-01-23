@@ -2,14 +2,10 @@
     <b>Id : <%= @gossip.id %></b>
     <p><%= @gossip.content %></p>
     <% if @gossip.user_id == session[:user_id] %>
-        <a href="edit/<%= @gossip.id%>" class= "btn btn-primary w-25">Edit</a>
-        <%= form_with url: "/gossip/#{@gossip.id}", method: :delete do |form| %>
-            <div>
-                <%= form.submit "Delete", class: "btn btn-danger" %>
-            </div>
-        <% end %>
+        <%= link_to "Edit", edit_gossip_path(@gossip.id), class: "btn btn-primary w-25" %>
+        <%= button_to "Delete", @gossip, class: "btn btn-danger", :method => :delete %>
     <% end %>
-    <a href="/gossips" class= "btn btn-primary w-25">Going back to gossips</a>
+    <%= link_to "Going back to gossips", gossips_path, class: "btn btn-primary w-25" %>
 </article>
 <% @gossip.comments.each do |comment| %> 
     <article class="card ms-5 me-4 my-3 p-3">

@@ -1,8 +1,8 @@
-<%= form_with url: :gossip_new , class: "m-5", method: :post do |form| %>
+<%= form_with url: gossips_path , class: "m-5", method: :post do |form| %>
   <%= form.text_field :content, class: "form-control p-3", placeholder: "Enter your gossip" %>
   <div id="register-btn-container">
     <%= form.submit "Create a gossip", class: "btn btn-success w-25 my-4" %>
   </div>
 <% end %>
 
-<a href=<%= :gossips %> class="btn btn-primary" >Going back to gossips</a>
+<%= link_to "Going back to gossips", gossips_path, class: "btn btn-primary" %>
