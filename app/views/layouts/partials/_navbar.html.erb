@@ -1,11 +1,11 @@
 <nav>
-    <a href="/login" class="h2" style="text-decoration:none; color:black;">Gossip</a>
+    <%= link_to "Gossip", gossips_path, class: "h2", style: "text-decoration:none; color:black;"%>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Connexion
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/login">Sign in</a></li>
+            <li><%= link_to "Sign in", new_session_path, class: "dropdown-item"%></li>
             <li><a class="dropdown-item" href="/register">Register</a></li>
             <li><a class="dropdown-item" href="/logout">Sign out</a></li>
         </ul>

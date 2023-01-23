@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   get :register, to: "register#index"
   post :register, to: "register#create_user"
   get :register_success , to: "register#success"
-  get :login, to: "login#index"
-  post :login, to: "login#connect"
+  
   #improve gossip with resources
   resources :gossips do
     resources :comments
   end
+  resources :sessions
 
   get "gossip/like/:id", to: "like#like_dislike"
   get "gossip/:id/comment/new", to: "comment#new"
