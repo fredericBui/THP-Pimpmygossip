@@ -1,8 +1,7 @@
 class GossipsController < ApplicationController
+    before_action :require_login
+    
     def index
-        if !session[:user_id]
-            redirect_to login_path
-        end
         @gossips = Gossip.all
     end
 

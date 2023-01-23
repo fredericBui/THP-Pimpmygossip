@@ -1,4 +1,6 @@
 class CommentController < ApplicationController
+    before_action :require_login
+    
     def index
         @comment = Comment.find(params[:id]) 
     end
