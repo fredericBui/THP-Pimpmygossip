@@ -16,9 +16,9 @@ Rails.application.routes.draw do
 
   get "gossip/:id/comment/new", to: "comment#new"
   post "gossip/:id/comment/new", to: "comment#create"
-  get "gossip/comment/edit/:id", to: "comment#edit"
-  put "gossip/comment/edit/:id", to: "comment#update"
-  delete "gossip/comment/edit/:id", to: "comment#delete"
+  # get "gossip/comment/edit/:id", to: "comment#edit"
+  # put "gossip/comment/edit/:id", to: "comment#update"
+  # delete "gossip/comment/edit/:id", to: "comment#delete"
   # get "gossip/comment/:id", to: "comment#index"
   get :logout, to: "logout#index"
 

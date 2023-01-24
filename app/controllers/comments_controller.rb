@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     end
 
     def new
+        @gossip = Gossip.find(params[:gossip_id])
     end
 
     def create
@@ -17,6 +18,7 @@ class CommentsController < ApplicationController
 
     def edit
         @comment = Comment.find(params[:id]) 
+        @gossip = Gossip.find(params[:gossip_id])
     end
 
     def update

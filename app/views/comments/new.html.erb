@@ -1,9 +1,9 @@
 <h1>New comment</h1>
-<%= form_with url: "/gossip/#{params[:id]}/comment/new" , class: "m-5", method: :post do |form| %>
+<%= form_with url: gossip_comments_path(@gossip) , class: "m-5", method: :post do |form| %>
   <%= form.text_field :content, class: "form-control p-3", placeholder: "Enter your comment" %>
   <div id="register-btn-container">
     <%= form.submit "Post a comment", class: "btn btn-success w-25 my-4" %>
   </div>
 <% end %>
 
-<a href="/gossips" class="btn btn-primary" >Going back to gossips</a>
+<%= link_to_gossips %>

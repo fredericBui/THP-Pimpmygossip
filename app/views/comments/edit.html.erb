@@ -1,7 +1,7 @@
-<%= form_with url: "/gossip/comment/edit/#{@comment.id}" , class: "m-5", method: :put do |form| %>
+<%= form_with url: gossip_comment_path(@gossip,@comment) , class: "m-5", method: :put do |form| %>
   <%= form.text_field :content, class: "form-control p-3", value: @comment.content %>
   <div id="register-btn-container">
     <%= form.submit "Edit", class: "btn btn-success w-25 my-4" %>
   </div>
 <% end %>
-<a href="/gossips" class= "btn btn-primary w-25">Going back to gossips</a>
+<%= link_to_gossips %>
