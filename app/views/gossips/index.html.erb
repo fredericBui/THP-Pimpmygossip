@@ -25,7 +25,7 @@
                 <b><%= comment.user.pseudo %></b>
                 <p><%= comment.content %></p>
                 <p><%= comment.created_at %></p>
-                <a href="gossip/comment/<%= comment.id%>">View</a>
+                <%= link_to "View", gossip_comment_path(gossip, comment) %>
             </article>
         <% end %> 
     <% end %> 
