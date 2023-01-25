@@ -1,0 +1,12 @@
+<h1 class="my-5 text-center">Welcome to Gossip</h1>
+<%= form_for :user, url: "/register", class: "registration-form", method: :post do |form| %>
+  <%= form.text_field :pseudo, class: "form-control", placeholder: "Enter a pseudo" %>
+  <%= form.text_field :email, class: "form-control", placeholder: "Enter an email" %>
+  <%= form.text_field :city, class: "form-control", placeholder: "Enter your city" %>
+  <%= form.password_field :password, class: "form-control", placeholder: "Enter a password" %>
+  <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm the password" %>
+  <div id="register-btn-container">
+    <%= form.submit "Register", class: "btn btn-primary w-50 my-3" %>
+  </div>
+<% end %>
+<p class="text-center">Already have an account ? <a href="/login">Login</a></p>
