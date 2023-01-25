@@ -11,8 +11,13 @@ class CommentsController < ApplicationController
     end
 
     def create
-        new_comment = Comment.create(content: params[:content], gossip_id: params[:id], user_id: session["user_id"])
-        puts new_comment
+        gossip = Gossip.find(params[:gossip_id])
+        user = User.find(session["user_id"])
+        new_comment = Comment.new(comment_params)
+        new_comment.gossip = gossip
+        new_comment.user = user
+        new_comment.save
+
         redirect_to gossips_path
     end
 
@@ -30,5 +35,10 @@ class CommentsController < ApplicationController
     def destroy
         Comment.find(params[:id]).destroy
         redirect_to gossips_path
+    end
+
+    private
+    def comment_params
+        params.require(:comment).permit(:content)
     end
 end

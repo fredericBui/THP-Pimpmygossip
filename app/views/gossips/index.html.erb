@@ -12,7 +12,7 @@
             <p><%= gossip.content %></p>
             <p><%= gossip.created_at %></p>
             <%= link_to "View", gossip_path(gossip) %>
-            <a href="gossip/<%= gossip.id%>/comment/new">Comment</a>
+            <%= link_to "Comment", new_gossip_comment_path(gossip) %>
         </article>
         <% gossip.comments.each do |comment| %> 
             <article class="card ms-5 me-4 my-3 p-3">
