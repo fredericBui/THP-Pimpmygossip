@@ -1,4 +1,4 @@
-<%= form_with url: gossips_path , class: "m-5", method: :post do |form| %>
+<%= form_for :gossip, url: gossips_path , class: "m-5", method: :post do |form| %>
   <%= form.text_field :content, class: "form-control p-3", placeholder: "Enter your gossip" %>
   <div id="register-btn-container">
     <%= form.submit "Create a gossip", class: "btn btn-success w-25 my-4" %>

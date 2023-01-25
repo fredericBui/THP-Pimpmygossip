@@ -16,11 +16,11 @@ class GossipsController < ApplicationController
     end
 
     def create
-        if params[:content]
-            new_gossip = Gossip.create(content: params[:content], user_id: session[:user_id])
-            puts new_gossip
-            redirect_to gossips_path
-        end
+        user = User.find(session[:user_id])
+        gossip = Gossip.new(gossip_params)
+        gossip.user = user
+        gossip.save
+        redirect_to gossips_path
     end
 
     def show
@@ -32,12 +32,18 @@ class GossipsController < ApplicationController
     end
 
     def update
-        Gossip.find(params[:id]).update(content: params[:content])
+        gossip = Gossip.find(params[:id])
+        gossip.update(gossip_params)
         redirect_to gossips_path
     end
 
     def destroy
         Gossip.find(params[:id]).destroy
         redirect_to gossips_path
+    end
+
+    private
+    def gossip_params
+        params.require(:gossip).permit(:content)
     end
 end
