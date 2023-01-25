@@ -3,7 +3,7 @@
     <% @gossips.each do |gossip| %> 
         <article class="card mx-4 my-3 p-3"> 
             <div class="card-header">
-                <a href="gossip/like/<%= gossip.id%>">
+                <a href=<%= "gossip/#{gossip.id}/like" %>>
                     <i class="fa-solid fa-heart"></i>
                 </a>
                 <%= gossip.likes.count %>
@@ -17,7 +17,7 @@
         <% gossip.comments.each do |comment| %> 
             <article class="card ms-5 me-4 my-3 p-3">
                 <div class="card-header">
-                    <a href="gossip/comment/like/<%= comment.id%>">
+                    <a href= <%= "gossip/#{gossip.id}/comment/#{comment.id}/like" %>>
                         <i class="fa-solid fa-heart"></i>
                     </a>
                     <%= comment.likes.count %>

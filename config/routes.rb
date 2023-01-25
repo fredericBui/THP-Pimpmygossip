@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   
   #improve gossip comments and like
   resources :gossips do
-    resources :comments
+    resources :comments, except: :index
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create]
   get :logout, to: "sessions#destroy"
 
-  get "gossip/comment/like/:id", to: "like#like_dislike_comment"
-  get "gossip/like/:id", to: "like#like_dislike"
+  get "gossip/:gossip_id/comment/:id/like", to: "like#like_dislike_comment"
+  get "gossip/:id/like/", to: "like#like_dislike"
 
   # Defines the root path route ("/")
   root "gossips#index"
