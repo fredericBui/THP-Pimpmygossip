@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     def update
         comment = Comment.find(params[:id])
-        comment.update(content: params[:content])
+        comment.update(comment_params)
         redirect_to gossips_path
     end
 
