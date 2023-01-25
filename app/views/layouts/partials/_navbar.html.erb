@@ -7,7 +7,9 @@
         <ul class="dropdown-menu">
             <li><%= link_to "Sign in", new_session_path, class: "dropdown-item"%></li>
             <li><a class="dropdown-item" href="/register">Register</a></li>
-            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+            <% if session[:user_id] %>
+                <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+            <% end %>
         </ul>
     </div>
 </nav>
